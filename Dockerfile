@@ -1,7 +1,7 @@
 FROM debian:bullseye-slim
 MAINTAINER rawdlite@gmail.com
 
-ARG ROMPR_VERSION=1.59.1
+ARG ROMPR_VERSION=2.14
 # Install packages
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \

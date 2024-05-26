@@ -1,6 +1,12 @@
 #!/bin/sh
-rm /var/run/nginx.pid
 set -e
 
+if [ -e /var/run/nginx.pid ]
+ rm /var/run/nginx.pid
+fi
+
+echo "Restarting PHP"
 /etc/init.d/php7.4-fpm restart
+
+echo "Starting nginx"
 exec /usr/sbin/nginx -g 'daemon off;'
